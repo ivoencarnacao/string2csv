@@ -21,19 +21,19 @@ Objetivos:
 3. Considerar os atletas com clube
 4. Imprimir num ficheiro csv
 5. Inserir uma coluna para o género dos atletas
-
 """
 
-string_original = """1 94 Ricardo Fonseca 00:15:20 00:31:18 00:31:18 1 V55 12 874 Pedro Gaspar 00:15:44 00:32:37 00:32:36 2 Senior 1"""
+results = """1 94 Ricardo Fonseca 00:15:20 00:31:18 00:31:18 1 V55 12 874 Pedro Gaspar 00:15:44 00:32:37 00:32:36 2 Senior 1"""
 
 
-#print(string_original)
+age_group = ["Junior", "Senior", "V55"]
 
 
-palavras = string_original.split(' ')
-#print(palavras)
+for ag in age_group:
+    if ag in results:
+        position = results.find(ag)
+        next_position = position + len(ag)
+        next_word = results[next_position:].split()[0]
 
-#print(palavras[9])
-print(palavras[0:10])
-
-
+        print(f"{next_word}")
+        
